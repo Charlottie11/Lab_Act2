@@ -1,0 +1,78 @@
+
+public class MyBookList extends Book{
+    public MyBookList(String title, String author, int yearPublished, int currentPage) {
+        super(title, author, yearPublished, currentPage);
+    }
+    
+    // 2.) Display the details of each book using the displayDetails method. Below is the sample output
+        //     Title: Rich Dad Poor Dad, Author: Robert Kiyosaki, Year: 1997, Current Page: 0
+        //     Title: The Power of Habit, Author: Charles Duhigg, Year: 2012, Current Page: 0
+        //     Title: Atomic Habits, Author: James Clear, Year: 2018, Current Page: 0
+        //     Title: Java Programming, Author: John Doe, Year: 2020, Current Page: 0
+    public static void displayDetails() {
+        System.out.println("\n---------------------");
+        System.out.println("|    Books Lists    |");
+        System.out.println("---------------------\n");
+        for (int i = 0; i < Book.books.length; i++) {
+            System.out.println("\nTitle: " + Book.books[i].title
+                    + ", Author: " + Book.books[i].author
+                    + ", Year: " + Book.books[i].yearPublished
+                    + ", Current Page: " + Book.books[i].currentPage);
+        }
+    }
+    public static void changePage() {
+        // 3.) Change the current page of "Rich Dad Poor Dad" to 50 and "Atomic Habits" to 100 using the changePage method. Display the details again for the two books.
+        books[0].currentPage = 50;
+        books[2].currentPage = 100;
+        System.out.println("\n-------------------------");
+        System.out.println("|    Updated Book/s     |");
+        System.out.println("-------------------------\n");
+        System.out.println("\nUPDATED PAGE FOR: \n");
+        System.out.println("\nTitle: " + Book.books[0].title
+                + ", Author: " + Book.books[0].author
+                + ", Year: " + Book.books[0].yearPublished
+                + ", Current Page: " + Book.books[0].currentPage);
+
+        System.out.println("\nTitle: " + Book.books[2].title
+                + ", Author: " + Book.books[2].author
+                + ", Year: " + Book.books[2].yearPublished
+                + ", Current Page: " + Book.books[2].currentPage);
+
+        // 4.) Change the current page of your favorite book to any page number you like. Display the details again for your favorite book.
+        books[4].currentPage = 11;
+        System.out.println("\n-------------------------");
+        System.out.println("|    Updated Book/s     |");
+        System.out.println("-------------------------\n");
+        System.out.println("\nUPDATED PAGE FOR: \n");
+        System.out.println("\nTitle: " + Book.books[4].title
+                + ", Author: " + Book.books[4].author
+                + ", Year: " + Book.books[4].yearPublished
+                + ", Current Page: " + Book.books[4].currentPage);
+    }
+    public static void main(String[] args) {
+        
+        displayDetails();
+        changePage();
+
+        // 5.) Change the author of "Java Programming" to "Jane Smith". Display the details again for the book.
+        books[3].author = "Jane Smith";
+        System.out.println("\n-------------------------");
+        System.out.println("|    Updated Book/s     |");
+        System.out.println("-------------------------\n");
+        System.out.println("\nUPDATED AUTHOR FOR: \n");
+        System.out.println("\nTitle: " + Book.books[3].title
+                + ", Author: " + Book.books[3].author
+                + ", Year: " + Book.books[3].yearPublished
+                + ", Current Page: " + Book.books[3].currentPage);
+            
+        //6.2) Loop through the array and display the title of the books published after 2010.
+        System.out.println("\n---------------------------------");
+        System.out.println("|   Books publish after 2010:   |");
+        System.out.println("---------------------------------\n");
+        for (int i = 0; i < Book.books.length; i++) {
+            if (books[i].yearPublished > 2010) {
+            System.out.println((i) + ") " + Book.books[i].title + "\n");
+            }
+        }
+    }   
+}
